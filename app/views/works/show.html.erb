@@ -15,17 +15,21 @@
   <h3 class="works-votes__header"><%= @votes.count %> Votes for this <%= @media_category.capitalize.singularize %></h3>
   <table class="table">
     <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-      </tr>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+    </tr>
     </thead>
     <tbody>
     <% @votes.each do |vote| %>
       <tr>
         <td><%= link_to vote.user.username, user_path(vote.user) %></td>
         <td><%= render_date vote.created_at %></td>
-      </li>
+      </tr>
     <% end %>
-  </ul>
+    </tbody>
+  </table>
 </section>
+
+
+

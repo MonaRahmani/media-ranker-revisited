@@ -21,15 +21,16 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem "omniauth"
+gem "omniauth-github"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.2', require: false
 
-gem "omniauth"
-gem "omniauth-github"
+
+gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -38,6 +39,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'dotenv-rails'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'
