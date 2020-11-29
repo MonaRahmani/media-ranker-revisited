@@ -8,7 +8,7 @@ describe WorksController do
 
   describe "Logged in users" do
     before do
-      perform_login(users(:grace))
+      perform_login(users(:dan))
     end
 
 
