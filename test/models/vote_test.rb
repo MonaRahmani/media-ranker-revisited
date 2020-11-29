@@ -1,19 +1,19 @@
 require "test_helper"
 
 describe Vote do
-  describe "relations" do
-    it "has a user" do
-      v = votes(:one)
-      expect(v).must_respond_to :user
-      expect(v.user).must_be_kind_of User
-    end
-
-    it "has a work" do
-      v = votes(:one)
-      expect(v).must_respond_to :work
-      expect(v.work).must_be_kind_of Work
-    end
-  end
+  # describe "relations" do
+  #   it "has a user" do
+  #     v = votes(:one)
+  #     expect(v).must_respond_to :user
+  #     expect(v.user).must_be_kind_of User
+  #   end
+  #
+  #   it "has a work" do
+  #     v = votes(:one)
+  #     expect(v).must_respond_to :work
+  #     expect(v.work).must_be_kind_of Work
+  #   end
+  # end
 
   describe "validations" do
     let (:user1) { User.new(username: "chris") }
