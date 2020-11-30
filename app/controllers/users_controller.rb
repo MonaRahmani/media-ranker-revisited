@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login, only: [:create]
-
+  before_action :require_login, only: [:index, :show]
 
   def index
     @users = User.all
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
 
     auth_hash = request.env["omniauth.auth"]
     # binding.pry
-    user = User.find_by(uid: auth_hash[:uid], provider: "github")
+    user = User.find_by(uid: auth_hash[:uid], provider: auth_hash[:provider])
     if user
       flash[:success] = "Logged in as returning user #{user.username}"
     else
@@ -33,10 +32,18 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def destroy
-    session[:user_id] = nil
-    flash[:success] = "Successfully logged out!"
+  def logout
+    if @login_user
+      session[:user_id] = nil
+      flash[:notice] = "Successfully logged out"
 
-    redirect_to root_path
+      redirect_to root_path
+      return
+    else
+      flash[:warning] = "You were not logged in!"
+
+      redirect_to root_path
+      return
+    end
   end
 end

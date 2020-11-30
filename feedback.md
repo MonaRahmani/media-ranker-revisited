@@ -28,13 +28,13 @@ At project time, we give them:
 At project submission, we expect more tests/assertions, and 0 skips
 
  -->
-
+<!--
 | Criteria | yes/no, and optionally any details/lines of code to reference |
 | --- | --- |
 | There are tests around the `User` model for validations, relationships, and custom methods (such as `build_from_github`) | ✔️?
 | There are tests for `UsersController#login` and `UsersController#logout` that use OAuth mocks | ✔️?
 | There are tests for `WorksController#upvote` that use OAuth mocks. There are separate tests for logged-in users and guest users. | ✔️?
-
+-->
 ## Functional Requirements
 
 | Functional Requirement | yes/no |
@@ -46,9 +46,9 @@ At project submission, we expect more tests/assertions, and 0 skips
 
 | Overall Feedback | Criteria | yes/no |
 | --- | --- | --- |
-| Green (Meets/Exceeds Standards) | 3 in Code Review && 2 in Functional Requirements | 
-| Yellow (Approaches Standards) | 2 in Code Review or 1 in Functional Requirements, or the instructor judges that this project needs special attention | 
-| Red (Not at Standard) | 0 in Code Review or 0 in Functional Reqs, or assignment is breaking/doesn’t run with less than 5 minutes of debugging, or the instructor judges that this project needs special attention | 
+| Green (Meets/Exceeds Standards) | 2 in Functional Requirements and controller methods are cleanly written with appropriate model methods for Oauth | 
+| Yellow (Approaches Standards) | 1 in Functional Requirements, or the instructor judges that this project needs special attention | 
+| Red (Not at Standard) |  0 in Functional Reqs, or assignment is breaking/doesn’t run with less than 5 minutes of debugging, or the instructor judges that this project needs special attention | 
 
 <!-- ### Additional Feedback -->
 
